@@ -1,167 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Darwin Art Online</title>
-
-    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="styles/bootstrap.css" rel="stylesheet">
-    <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="styles/bootstrap.min.css" rel="stylesheet">
-
-  </head>
-
-<div id="top"> <!--top begin here -->
-
-  <div class="container"> <!--container begin here -->
-
-    <div class ="col-md-6 offer"> <!--COllllll begin here -->
-
-      <a href="#" class="btn btn-success btn-sm">Welcome </a>
-        <a href="checkout.php"> 5 Items in Your Cart | Totat Price: $200 </a>
-
-    </div> <!--COllllll finish here -->
-
-    <div class="col-md-6"> <!--colll62 begin here -->
-
-      <ul class="menu"><!--UL begin here -->
-
-        <li>
-            <a href="customer_register.php">Register</a>
-        </li>
-        <li>
-          <a href="customer/my_account.php">My Account</a>
-        </li>
-        <li>
-          <a href="cart.php">Go To Cart</a>
-        </li>
-        <li>
-          <a href="checkout.php">Login</a>
-        </li>
-
-
-      </ul><!--Ul finish here -->
-
-    </div> <!--COllllll62 finish here -->
-
-  </div><!--container end here -->
-
-</div>  <!--top finish here -->
-
-<div id="navbar" class="navbar navbar-default"> <!--Main Menu start here -->
-
-  <div class="container"> <!--Nav container begin here -->
-
-    <div class="navbar-header">
-
-      <a href="index.php" class="navbar-brand home">
-
-        <img src="images/logo.png" alt="Darwin Art Online Logo" class="hidden-xs">
-
-      </a>
-
-      <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-
-        <span class="sr-only">Toggle Navigation</span>
-        <i class="fa fa-align-justify"></i>
-
-      </button>
-
-      <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
-
-        <span class="sr-only">Toggle Search</span>
-        <i class="fa fa-search"></i>
-
-      </button>
-
-    </div>
-
-    <div class="navbar-collapse collapse" id="navigation">
-
-      <div class="padding-nav">
-
-        <ul class="nav navbar-nav left">
-
-          <li>
-            <a href="index.php"><a/>
-          </li>
-
-          <li>
-            <a href="index.php">Home<a/>
-          </li>
-
-          <li >
-            <a href="shop.php">shop<a/>
-          </li>
-
-          <li>
-            <a href="customer/my_account.php">My Account<a/>
-          </li>
-
-          <li>
-            <a href="cart.php">Shopping Cart<a/>
-          </li>
-
-          <li Class="active">
-            <a href="contact.php">Contact<a/>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <a href="cart.php" class="btn navbar-btn btn-primary right" id="cart">
-
-        <i class="fa fa-shopping-cart"></i>
-          <span> 5 Items In Your Cart </span>
-      </a>
-
-      <div class="navbar-collapse collapse right">
-
-        <button class="btn btn-primary navbar-btn " type="button" id="search1"  data-toggle="collapse" data-target="#search">
-
-          <span class="sr-only">Toggle Search</span>
-          <i class="fa fa-search"></i>
-
-        </button>
-
-       </div>
-
-       <div class="collapse clearfix" id="search">
-
-         <form method="get" action="results.php" class="navbar-forms">
-
-         <div class="input-group">
-
-           <input type="text" class="form-control" placeholder="Search" name="user_query" required>
-
-           <span class="input-group-btn">
-           <button type="submit" name="search" value="Search" class="btn btn-primary">
-
-             <i class="fa fa-search"></i>
-
-           </button>
-
-           </span>
-
-         </div>
-
-       </form>
-
-       </div>
-
-    </div>
-
-  </div><!--Nav container finish here -->
-</div> <!--Main Menu finish here -->
-
+<?php
+  $active='Contact';
+  include("includes/header.php");
+ ?>
 
 <div id="content">
   <div class="container">
@@ -194,6 +34,7 @@
               If you have question, feel free to contact us. <strong>24/7</strong>
           </p>
         </center>
+
         <form action="contact.php" method="post">
           <div class="form-group">
             <label> Name </label>
@@ -202,7 +43,7 @@
 
           <div class="form-group">
             <label>Email</label>
-            <input type="text" class="form-control" name="email" required>
+            <input type="email" class="form-control" name="email" required>
           </div>
 
           <div class="form-group">
@@ -222,6 +63,33 @@
           </div>
 
         </form>
+
+        <?php
+
+        // sending message to Admin
+
+        if(isset($_POST['submit'])){
+
+          $sender_name = $_POST['name'];
+          $sender_email = $_POST['email'];
+          $sender_subject = $_POST['subject'];
+          $sender_message = $_POST['message'];
+
+          $receiver_email = "mudosamugisho@gamil.com";
+          mail($receiver_email,$sender_name,$sender_subject,$sender_message,$sender_email);
+
+            //Auto Reply
+
+          $email = $_POST['email'];
+          $subject = "Thank you for contacting us";
+          $msg = "We will get back soon to you";
+          $from = "mudosamugisho@gamil.com";
+          $email($email,$subject,$msg,$from);
+
+          echo " <h2 align='center'> Your Message was sucessfully sent </h2>";
+        }
+
+        ?>
 
       </div>
     </div>

@@ -1,167 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Darwin Art Online</title>
-
-    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="styles/bootstrap.css" rel="stylesheet">
-    <link href="styles/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="styles/bootstrap.min.css" rel="stylesheet">
-
-  </head>
-
-<div id="top"> <!--top begin here -->
-
-  <div class="container"> <!--container begin here -->
-
-    <div class ="col-md-6 offer"> <!--COllllll begin here -->
-
-      <a href="#" class="btn btn-success btn-sm">Welcome </a>
-        <a href="checkout.php"> 5 Items in Your Cart | Totat Price: $200 </a>
-
-    </div> <!--COllllll finish here -->
-
-    <div class="col-md-6"> <!--colll62 begin here -->
-
-      <ul class="menu"><!--UL begin here -->
-
-        <li>
-            <a href="customer_register.php">Register</a>
-        </li>
-        <li>
-          <a href="customer/my_account.php">My Account</a>
-        </li>
-        <li>
-          <a href="cart.php">Go To Cart</a>
-        </li>
-        <li>
-          <a href="checkout.php">Login</a>
-        </li>
-
-
-      </ul><!--Ul finish here -->
-
-    </div> <!--COllllll62 finish here -->
-
-  </div><!--container end here -->
-
-</div>  <!--top finish here -->
-
-<div id="navbar" class="navbar navbar-default"> <!--Main Menu start here -->
-
-  <div class="container"> <!--Nav container begin here -->
-
-    <div class="navbar-header">
-
-      <a href="index.php" class="navbar-brand home">
-
-        <img src="images/logo.png" alt="Darwin Art Online Logo" class="hidden-xs">
-
-      </a>
-
-      <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-
-        <span class="sr-only">Toggle Navigation</span>
-        <i class="fa fa-align-justify"></i>
-
-      </button>
-
-      <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
-
-        <span class="sr-only">Toggle Search</span>
-        <i class="fa fa-search"></i>
-
-      </button>
-
-    </div>
-
-    <div class="navbar-collapse collapse" id="navigation">
-
-      <div class="padding-nav">
-
-        <ul class="nav navbar-nav left">
-
-          <li>
-            <a href="index.php"><a/>
-          </li>
-
-          <li Class="active">
-            <a href="index.php">Home<a/>
-          </li>
-
-          <li >
-            <a href="shop.php">shop<a/>
-          </li>
-
-          <li>
-            <a href="customer/my_account.php">My Account<a/>
-          </li>
-
-          <li>
-            <a href="cart.php">Shopping Cart<a/>
-          </li>
-
-          <li >
-            <a href="contact.php">Contact<a/>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <a href="cart.php" class="btn navbar-btn btn-primary right" id="cart">
-
-        <i class="fa fa-shopping-cart"></i>
-          <span> 5 Items In Your Cart </span>
-      </a>
-
-      <div class="navbar-collapse collapse right">
-
-        <button class="btn btn-primary navbar-btn " type="button" id="search1"  data-toggle="collapse" data-target="#search">
-
-          <span class="sr-only">Toggle Search</span>
-          <i class="fa fa-search"></i>
-
-        </button>
-
-       </div>
-
-       <div class="collapse clearfix" id="search">
-
-         <form method="get" action="results.php" class="navbar-forms">
-
-         <div class="input-group">
-
-           <input type="text" class="form-control" placeholder="Search" name="user_query" required>
-
-           <span class="input-group-btn">
-           <button type="submit" name="search" value="Search" class="btn btn-primary">
-
-             <i class="fa fa-search"></i>
-
-           </button>
-
-           </span>
-
-         </div>
-
-       </form>
-
-       </div>
-
-    </div>
-
-  </div><!--Nav container finish here -->
-</div> <!--Main Menu finish here -->
+<?php
+  $active='Account';
+  include("includes/header.php");
+ ?>
 
 
 <div id="content">
@@ -193,49 +33,51 @@
           <h2>Register a new account</h2>
         </center>
 
-
-
         <form action="customer_register.php" method="post" enctype="multipart/form-data">
           <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" class="form-control" name="c_name" required>
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="c_fname" required>
           </div>
-
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="c_lname" required>
+          </div>
+          <div class="form-group">
+            <label>Your Title</label>
+            <input type="text" class="form-control" name="c_title" required>
+          </div>
           <div class="form-group">
             <label>Your Email</label>
-            <input type="text" class="form-control" name="c_email" required>
+            <input type="email" class="form-control" name="c_email" required>
           </div>
-
           <div class="form-group">
             <label>Your Password</label>
             <input type="password" class="form-control" name="c_password" required>
           </div>
-
-          <div class="form-group">
-            <label>Your Country</label>
-            <input type="text" class="form-control" name="c_country" required>
-          </div>
-
-          <div class="form-group">
-            <label>Your city</label>
-            <input type="text" class="form-control" name="c_city" required>
-          </div>
-
-          <div class="form-group">
-            <label>Your Contact</label>
-            <input type="text" class="form-control" name="c_contact" required>
-          </div>
-
           <div class="form-group">
             <label>Your Address</label>
             <input type="text" class="form-control" name="c_address" required>
           </div>
-
           <div class="form-group">
-            <label>Your Profile Picture</label>
-            <input type="file" class="form-control form-height-cusomer" name="c_image" required>
+            <label>Your city</label>
+            <input type="text" class="form-control" name="c_city" required>
           </div>
-
+          <div class="form-group">
+            <label>Your state</label>
+            <input type="text" class="form-control" name="c_state" required>
+          </div>
+          <div class="form-group">
+            <label>Your Country</label>
+            <input type="text" class="form-control" name="c_country" required>
+          </div>
+          <div class="form-group">
+            <label>Your Post Code</label>
+            <input type="text" class="form-control" name="c_postCode" required>
+          </div>
+          <div class="form-group">
+            <label>Your Phone</label>
+            <input type="text" class="form-control" name="c_contact" required>
+          </div>
           <div class="text-center">
             <button class="btn btn-primary" type="submit" name="register">
             <i class="fa fa-user-md"></i> Register
@@ -259,5 +101,44 @@ include("includes/footer.php");
 <script src="js/bootstrap-337.min.js"></script>
 
 </body>
-
 </html>
+
+<?php
+  if(isset($_POST['register'])){
+    $c_email = $_POST['c_email'];
+    $c_pass = $_POST['c_password'];
+    $c_fname = $_POST['c_fname'];
+    $c_lname = $_POST['c_lname'];
+    $c_title = $_POST['c_title'];
+    $c_address = $_POST['c_address'];
+    $c_city = $_POST['c_city'];
+    $c_state = $_POST['c_state'];
+    $c_country = $_POST['c_country'];
+    $c_postCode = $_POST['c_postCode'];
+    $c_contact = $_POST['c_contact'];
+
+    $c_ip = getRealInputFromUser();
+
+    $insert_customer = "insert into customer (CustEmail,C_password,CustFName,CustLNAme,Title,Address,City,State, Country,PostCode,Phone,c_ip) values ('$c_email','$c_pass','$c_fname','$c_lname','$c_title','$c_address','$c_city','$c_state','$c_country','$c_postCode','$c_contact','$c_ip')";
+
+    $run_customer = mysqli_query($con,$insert_customer);
+
+    //not fix to connet to my cart yet
+
+    $sel_cart = "select * from cart where ip_add='c_ip'";
+    $run_cart = mysqli_query($con,$sel_cart);
+    $check_cart = mysqli_num_rows($run_cart);
+
+    if($check_cart>0){
+      $_SESSION['CustEmail']=$c_email;
+      echo "<script>alert('Your registration has been complated')</script>";
+      echo "<script>window.open('checkout.php','_self')</script>";
+    }
+    else{
+      $_SESSION['CustEmail']=$c_email;
+      echo "<script>alert('Your registration has been complated')</script>";
+      echo "<script>window.open('index.php','_self')</script>";
+      }
+
+  }
+ ?>
