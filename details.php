@@ -147,12 +147,7 @@
           <hr>
 
 
-
-
       </div>
-
-
-
 
 
       <div id="row same-heigh-row">

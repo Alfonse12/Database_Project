@@ -54,7 +54,7 @@
             $_SESSION['CustEmail'] = $CustEmail;
 
             echo "<script>alert('You are logged in your account')</script>";
-            echo "<script>window.open('customer/my_account.php?my_orers','_self')</script>";
+            echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
 
           }else{
             $_SESSION['CustEmail'] = $CustEmail;

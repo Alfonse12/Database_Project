@@ -10,13 +10,20 @@
             <li> <a href="cart.php">Shopping Cart</a></li>
             <li> <a href="contact.php">Contact Us</a></li>
             <li> <a href="shop.php">Shop</a></li>
-            <li> <a href="../my_account.php">My Account</a></li>
+            <li> <a href="my_account.php">My Account</a></li>
           </ul>
           <hr>
 
           <h4>User Section </h4>
           <ul>
-            <li> <a href="checkout.php">Login</a></li>
+            <?php
+            if(!isset($_SESSION['CustEmail'])){
+              echo "<a href='checkout.php'>Login</a>";
+            }
+            else{
+              echo "<a href='customer/my_account.php?my_orders'> My Account</a>";
+            }
+             ?>
             <li> <a href="customer_register.php">Register</a></li>
           </ul>
           <hr class="hidden-md hidden-lg hidden-sm">

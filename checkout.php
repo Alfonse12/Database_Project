@@ -25,8 +25,11 @@
 
   </div>
 
-
-
+<div class="col-md-9">
+  <?php
+    include("customer/customer_login.php");
+  ?>
+</div>
 
 </div>
 </div>

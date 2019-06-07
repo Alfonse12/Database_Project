@@ -120,27 +120,23 @@ include("../functions/functions.php");
         <ul class="nav navbar-nav left">
 
           <li>
-            <a href="index.php"><a/>
-          </li>
-
-          <li>
-            <a href="../index.php">Home<a/>
+            <a href="../index.php">Home</a>
           </li>
 
           <li >
-            <a href="../shop.php">shop<a/>
+            <a href="../shop.php">shop</a>
           </li>
 
           <li Class="active">
-            <a href="../checkout.php">My Account<a/>
+            <a href="../checkout.php">My Account</a>
           </li>
 
           <li>
-            <a href="../cart.php">Shopping Cart<a/>
+            <a href="../cart.php">Shopping Cart</a>
           </li>
 
           <li>
-            <a href="../contact.php">Contact<a/>
+            <a href="../contact.php">Contact</a>
           </li>
 
         </ul>

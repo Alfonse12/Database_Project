@@ -123,7 +123,7 @@ include("includes/footer.php");
 
     $run_customer = mysqli_query($con,$insert_customer);
 
-    //not fix to connet to my cart yet
+
 
     $sel_cart = "select * from cart where ip_add='c_ip'";
     $run_cart = mysqli_query($con,$sel_cart);

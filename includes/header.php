@@ -73,12 +73,15 @@ include("functions/functions.php");
         <li>
             <a href="customer_register.php">Register</a>
         </li>
+
         <li>
           <a href="checkout.php">My Account</a>
         </li>
+
         <li>
           <a href="cart.php">Go To Cart</a>
         </li>
+
         <li>
           <a href="checkout.php">
             <?php
@@ -136,28 +139,32 @@ include("functions/functions.php");
 
         <ul class="nav navbar-nav left">
 
-          <li>
-            <a href="index.php"><a/>
-          </li>
-
           <li Class="<?php if($active=='Home') echo"active"; ?>">
-            <a href="index.php">Home<a/>
+            <a href="index.php">Home</a>
           </li>
 
           <li Class="<?php if($active=='shop') echo"active"; ?>">
-            <a href="shop.php">shop<a/>
+            <a href="shop.php">shop</a>
           </li>
 
             <li Class="<?php if($active=='Account') echo"active"; ?>">
-            <a href="customer/my_account.php">My Account<a/>
+
+              <?php
+              if(!isset($_SESSION['CustEmail'])){
+                echo "<a href='checkout.php'> My Account</a>";
+              }
+              else{
+                echo "<a href='customer/my_account.php?my_orders'> My Account</a>";
+              }
+               ?>
           </li>
 
           <li Class="<?php if($active=='Cart') echo"active"; ?>">
-            <a href="cart.php">Shopping Cart<a/>
+            <a href="cart.php">Shopping Cart</a>
           </li>
 
           <li Class="<?php if($active=='Contact') echo"active"; ?>">
-            <a href="contact.php">Contact<a/>
+            <a href="contact.php">Contact</a>
           </li>
 
         </ul>
@@ -167,7 +174,7 @@ include("functions/functions.php");
       <a href="cart.php" class="btn navbar-btn btn-primary right" id="cart">
 
         <i class="fa fa-shopping-cart"></i>
-          <span> 5 Items In Your Cart </span>
+          <span> 2 Items In Your Cart </span>
       </a>
 
       <div class="navbar-collapse collapse right">
